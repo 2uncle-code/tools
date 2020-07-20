@@ -1,0 +1,381 @@
+===========2019/12/21 16:35:33===========
+Î´°²×°avisynth,Ê¹ÓÃ±¾µØÄÚÖÃavs.
+
+===========2019/12/21 16:35:41===========
+"C:\Program Files (x86)\MarukoToolbox\tools\ffmpeg.exe" -i "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê.mp4" -vn -sn -v 0 -c:a pcm_s16le -f wav pipe:|"C:\Program Files (x86)\MarukoToolbox\tools\neroAacEnc.exe" -ignorelength -lc -br 128000 -if - -of "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4"
+"C:\Program Files (x86)\MarukoToolbox\tools\x264_32-8bit.exe" --crf 23.5 --preset 8  -I 300 -r 4 -b 3 --me umh -i 1 --scenecut 60 -f 1:1 --qcomp 0.5 --psy-rd 0.3:0 --aq-mode 2 --aq-strength 0.8 -o "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4" "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê.mp4"
+"C:\Program Files (x86)\MarukoToolbox\tools\mp4box.exe" -add "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4#trackID=1:name=" -add "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4#trackID=1:name=" -new "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê_x264.mp4"
+
+del "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4"
+del "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4"
+
+echo ===== one file is completed! =====
+
+
+===========2019/12/21 16:48:25===========
+C:\Program Files (x86)\MarukoToolbox>"C:\Program Files (x86)\MarukoToolbox\tools\ffmpeg.exe" -i "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê.mp4" -vn -sn -v 0 -c:a pcm_s16le -f wav pipe:  | "C:\Program Files (x86)\MarukoToolbox\tools\neroAacEnc.exe" -ignorelength -lc -br 128000 -if - -of "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4" 
+*************************************************************
+*                                                           *
+*  Nero AAC Encoder                                         *
+*  Copyright 2009 Nero AG                                   *
+*  All Rights Reserved Worldwide                            *
+*                                                           *
+*  Package build date: Feb 18 2010                          *
+*  Package version:    1.5.4.0                              *
+*                                                           *
+*  See -help for a complete list of available parameters.   *
+*                                                           *
+*************************************************************
+C:\Program Files (x86)\MarukoToolbox>"C:\Program Files (x86)\MarukoToolbox\tools\x264_32-8bit.exe" --crf 23.5 --preset 8  -I 300 -r 4 -b 3 --me umh -i 1 --scenecut 60 -f 1:1 --qcomp 0.5 --psy-rd 0.3:0 --aq-mode 2 --aq-strength 0.8 -o "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4" "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê.mp4" 
+[info]: indexing input file [0.3%]  
+[info]: indexing input file [48.3%] 
+[info]: indexing input file [97.6%] 
+                                    
+ffms [info]: 
+ Format    : mov,mp4,m4a,3gp,3g2,mj2
+ Codec     : h264
+ PixFmt    : yuv420p
+ Framerate : 30000/1001
+ Timebase  : 1000/30000000
+ Duration  : 0:02:56
+ffms [info]: 1920x1080p 0:1 @ 30000/1001 fps (vfr)
+ffms [info]: color matrix: bt709
+x264 [info]: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 AVX2 LZCNT BMI2
+x264 [info]: AVC Encoder x264 core 148 r2721+46 0c4b09a xiaowan [8-bit@all X86]
+x264 [info]: profile: High, level: 4.0, subsampling: 4:2:0, bit-depth: 8-bit
+x264 [info]: cabac=1 ref=4 deblock=1:1:1 analyse=0x3:0x133 me=umh subme=10 psy=1 fade_compensate=0.00 psy_rd=0.30:0.00 mixed_ref=1 me_range=24 chroma_me=1 trellis=2 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 fgo=0 bframes=3 b_pyramid=2 b_adapt=2 b_bias=0 direct=3 weightb=1 open_gop=0 weightp=2 keyint=300 keyint_min=1 scenecut=60 intra_refresh=0 rc_lookahead=60 rc=crf mbtree=1 crf=23.5000 qcomp=0.50 qpmin=0:0:0 qpmax=69:69:69 qpstep=4 ip_ratio=1.40 aq=2:0.80 aq-sensitivity=10.00 aq-factor=1.00:1.00:1.00 aq2=0 aq3=0
+x264 [info]: started at Sat Dec 21 16:35:48 2019
+                                                                                                                       
+x264 [info]: frame I:33    Avg QP:21.16  size:144111
+x264 [info]: frame P:1493  Avg QP:25.03  size: 17561
+x264 [info]: frame B:3756  Avg QP:31.15  size:  2439
+x264 [info]: consecutive B-frames:  3.0%  3.6%  8.3% 85.0%
+x264 [info]: mb I  I16..4: 17.5% 55.9% 26.5%
+x264 [info]: mb P  I16..4:  6.7%  7.5%  0.5%  P16..4: 35.0%  4.1%  4.4%  0.1%  0.0%    skip:41.9%
+x264 [info]: mb B  I16..4:  0.4%  0.5%  0.0%  B16..8: 15.5%  0.9%  0.1%  direct: 0.2%  skip:82.3%  L0:40.1% L1:56.9% BI: 3.0%
+x264 [info]: 8x8 transform intra:52.1% inter:72.8%
+x264 [info]: direct mvs  spatial:99.9% temporal:0.1%
+x264 [info]: coded y,uvDC,uvAC intra: 27.1% 27.7% 5.4% inter: 3.5% 4.6% 0.0%
+x264 [info]: i16 v,h,dc,p: 31% 26% 14% 29%
+x264 [info]: i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 13% 33%  5%  5%  6%  6%  7%  6%
+x264 [info]: i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 18% 12%  6%  9%  8%  8%  7%  8%
+x264 [info]: i8c dc,h,v,p: 62% 19% 14%  5%
+x264 [info]: Weighted P-Frames: Y:98.8% UV:3.2%
+x264 [info]: ref P L0: 60.6% 14.9% 16.4%  7.3%  0.8%  0.0%
+x264 [info]: ref B L0: 91.0%  6.3%  2.7%
+x264 [info]: ref B L1: 97.3%  2.7%
+x264 [info]: kb/s:1821.83
+                                                        
+encoded 5282 frames, 6.989 fps, 1821.87 kb/s, 38.28 MB
+x264 [info]: ended at Sat Dec 21 16:48:24 2019
+x264 [info]: encoding duration 0:12:36
+C:\Program Files (x86)\MarukoToolbox>"C:\Program Files (x86)\MarukoToolbox\tools\mp4box.exe" -add "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4#trackID=1:name=" -add "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4#trackID=1:name=" -new "D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê_x264.mp4" 
+IsoMedia import ½¾°ÁµÄ¹ê¹ê_vtemp.mp4 - track ID 1 - Video (size 1920 x 1080)
+Importing ISO File: |                    | (01/100)
+Importing ISO File: |                    | (02/100)
+Importing ISO File: |                    | (03/100)
+Importing ISO File: |                    | (04/100)
+Importing ISO File: |=                   | (05/100)
+Importing ISO File: |=                   | (06/100)
+Importing ISO File: |=                   | (07/100)
+Importing ISO File: |=                   | (08/100)
+Importing ISO File: |=                   | (09/100)
+Importing ISO File: |==                  | (10/100)
+Importing ISO File: |==                  | (11/100)
+Importing ISO File: |==                  | (12/100)
+Importing ISO File: |==                  | (13/100)
+Importing ISO File: |==                  | (14/100)
+Importing ISO File: |===                 | (15/100)
+Importing ISO File: |===                 | (16/100)
+Importing ISO File: |===                 | (17/100)
+Importing ISO File: |===                 | (18/100)
+Importing ISO File: |===                 | (19/100)
+Importing ISO File: |====                | (20/100)
+Importing ISO File: |====                | (21/100)
+Importing ISO File: |====                | (22/100)
+Importing ISO File: |====                | (23/100)
+Importing ISO File: |====                | (24/100)
+Importing ISO File: |=====               | (25/100)
+Importing ISO File: |=====               | (26/100)
+Importing ISO File: |=====               | (27/100)
+Importing ISO File: |=====               | (28/100)
+Importing ISO File: |=====               | (29/100)
+Importing ISO File: |======              | (30/100)
+Importing ISO File: |======              | (31/100)
+Importing ISO File: |======              | (32/100)
+Importing ISO File: |======              | (33/100)
+Importing ISO File: |======              | (34/100)
+Importing ISO File: |=======             | (35/100)
+Importing ISO File: |=======             | (36/100)
+Importing ISO File: |=======             | (37/100)
+Importing ISO File: |=======             | (38/100)
+Importing ISO File: |=======             | (39/100)
+Importing ISO File: |========            | (40/100)
+Importing ISO File: |========            | (41/100)
+Importing ISO File: |========            | (42/100)
+Importing ISO File: |========            | (43/100)
+Importing ISO File: |========            | (44/100)
+Importing ISO File: |=========           | (45/100)
+Importing ISO File: |=========           | (46/100)
+Importing ISO File: |=========           | (47/100)
+Importing ISO File: |=========           | (48/100)
+Importing ISO File: |=========           | (49/100)
+Importing ISO File: |==========          | (50/100)
+Importing ISO File: |==========          | (51/100)
+Importing ISO File: |==========          | (52/100)
+Importing ISO File: |==========          | (53/100)
+Importing ISO File: |==========          | (54/100)
+Importing ISO File: |===========         | (55/100)
+Importing ISO File: |===========         | (56/100)
+Importing ISO File: |===========         | (57/100)
+Importing ISO File: |===========         | (58/100)
+Importing ISO File: |===========         | (59/100)
+Importing ISO File: |============        | (60/100)
+Importing ISO File: |============        | (61/100)
+Importing ISO File: |============        | (62/100)
+Importing ISO File: |============        | (63/100)
+Importing ISO File: |============        | (64/100)
+Importing ISO File: |=============       | (65/100)
+Importing ISO File: |=============       | (66/100)
+Importing ISO File: |=============       | (67/100)
+Importing ISO File: |=============       | (68/100)
+Importing ISO File: |=============       | (69/100)
+Importing ISO File: |==============      | (70/100)
+Importing ISO File: |==============      | (71/100)
+Importing ISO File: |==============      | (72/100)
+Importing ISO File: |==============      | (73/100)
+Importing ISO File: |==============      | (74/100)
+Importing ISO File: |===============     | (75/100)
+Importing ISO File: |===============     | (76/100)
+Importing ISO File: |===============     | (77/100)
+Importing ISO File: |===============     | (78/100)
+Importing ISO File: |===============     | (79/100)
+Importing ISO File: |================    | (80/100)
+Importing ISO File: |================    | (81/100)
+Importing ISO File: |================    | (82/100)
+Importing ISO File: |================    | (83/100)
+Importing ISO File: |================    | (84/100)
+Importing ISO File: |=================   | (85/100)
+Importing ISO File: |=================   | (86/100)
+Importing ISO File: |=================   | (87/100)
+Importing ISO File: |=================   | (88/100)
+Importing ISO File: |=================   | (89/100)
+Importing ISO File: |==================  | (90/100)
+Importing ISO File: |==================  | (91/100)
+Importing ISO File: |==================  | (92/100)
+Importing ISO File: |==================  | (93/100)
+Importing ISO File: |==================  | (94/100)
+Importing ISO File: |=================== | (95/100)
+Importing ISO File: |=================== | (96/100)
+Importing ISO File: |=================== | (97/100)
+Importing ISO File: |=================== | (98/100)
+Importing ISO File: |=================== | (99/100)
+                                                          
+IsoMedia import ½¾°ÁµÄ¹ê¹ê_atemp.mp4 - track ID 1 - Audio (SR 48000 - 2 channels)
+Importing ISO File: |                    | (01/100)
+Importing ISO File: |                    | (02/100)
+Importing ISO File: |                    | (03/100)
+Importing ISO File: |                    | (04/100)
+Importing ISO File: |=                   | (05/100)
+Importing ISO File: |=                   | (06/100)
+Importing ISO File: |=                   | (07/100)
+Importing ISO File: |=                   | (08/100)
+Importing ISO File: |=                   | (09/100)
+Importing ISO File: |==                  | (10/100)
+Importing ISO File: |==                  | (11/100)
+Importing ISO File: |==                  | (12/100)
+Importing ISO File: |==                  | (13/100)
+Importing ISO File: |==                  | (14/100)
+Importing ISO File: |===                 | (15/100)
+Importing ISO File: |===                 | (16/100)
+Importing ISO File: |===                 | (17/100)
+Importing ISO File: |===                 | (18/100)
+Importing ISO File: |===                 | (19/100)
+Importing ISO File: |====                | (20/100)
+Importing ISO File: |====                | (21/100)
+Importing ISO File: |====                | (22/100)
+Importing ISO File: |====                | (23/100)
+Importing ISO File: |====                | (24/100)
+Importing ISO File: |=====               | (25/100)
+Importing ISO File: |=====               | (26/100)
+Importing ISO File: |=====               | (27/100)
+Importing ISO File: |=====               | (28/100)
+Importing ISO File: |=====               | (29/100)
+Importing ISO File: |======              | (30/100)
+Importing ISO File: |======              | (31/100)
+Importing ISO File: |======              | (32/100)
+Importing ISO File: |======              | (33/100)
+Importing ISO File: |======              | (34/100)
+Importing ISO File: |=======             | (35/100)
+Importing ISO File: |=======             | (36/100)
+Importing ISO File: |=======             | (37/100)
+Importing ISO File: |=======             | (38/100)
+Importing ISO File: |=======             | (39/100)
+Importing ISO File: |========            | (40/100)
+Importing ISO File: |========            | (41/100)
+Importing ISO File: |========            | (42/100)
+Importing ISO File: |========            | (43/100)
+Importing ISO File: |========            | (44/100)
+Importing ISO File: |=========           | (45/100)
+Importing ISO File: |=========           | (46/100)
+Importing ISO File: |=========           | (47/100)
+Importing ISO File: |=========           | (48/100)
+Importing ISO File: |=========           | (49/100)
+Importing ISO File: |==========          | (50/100)
+Importing ISO File: |==========          | (51/100)
+Importing ISO File: |==========          | (52/100)
+Importing ISO File: |==========          | (53/100)
+Importing ISO File: |==========          | (54/100)
+Importing ISO File: |===========         | (55/100)
+Importing ISO File: |===========         | (56/100)
+Importing ISO File: |===========         | (57/100)
+Importing ISO File: |===========         | (58/100)
+Importing ISO File: |===========         | (59/100)
+Importing ISO File: |============        | (60/100)
+Importing ISO File: |============        | (61/100)
+Importing ISO File: |============        | (62/100)
+Importing ISO File: |============        | (63/100)
+Importing ISO File: |============        | (64/100)
+Importing ISO File: |=============       | (65/100)
+Importing ISO File: |=============       | (66/100)
+Importing ISO File: |=============       | (67/100)
+Importing ISO File: |=============       | (68/100)
+Importing ISO File: |=============       | (69/100)
+Importing ISO File: |==============      | (70/100)
+Importing ISO File: |==============      | (71/100)
+Importing ISO File: |==============      | (72/100)
+Importing ISO File: |==============      | (73/100)
+Importing ISO File: |==============      | (74/100)
+Importing ISO File: |===============     | (75/100)
+Importing ISO File: |===============     | (76/100)
+Importing ISO File: |===============     | (77/100)
+Importing ISO File: |===============     | (78/100)
+Importing ISO File: |===============     | (79/100)
+Importing ISO File: |================    | (80/100)
+Importing ISO File: |================    | (81/100)
+Importing ISO File: |================    | (82/100)
+Importing ISO File: |================    | (83/100)
+Importing ISO File: |================    | (84/100)
+Importing ISO File: |=================   | (85/100)
+Importing ISO File: |=================   | (86/100)
+Importing ISO File: |=================   | (87/100)
+Importing ISO File: |=================   | (88/100)
+Importing ISO File: |=================   | (89/100)
+Importing ISO File: |==================  | (90/100)
+Importing ISO File: |==================  | (91/100)
+Importing ISO File: |==================  | (92/100)
+Importing ISO File: |==================  | (93/100)
+Importing ISO File: |==================  | (94/100)
+Importing ISO File: |=================== | (95/100)
+Importing ISO File: |=================== | (96/100)
+Importing ISO File: |=================== | (97/100)
+Importing ISO File: |=================== | (98/100)
+Importing ISO File: |=================== | (99/100)
+                                                          
+Saving D:\ÊÓÆµ\½¾°ÁµÄ¹ê¹ê\output\½¾°ÁµÄ¹ê¹ê_x264.mp4: 0.500 secs Interleaving
+ISO File Writing: |                    | (01/100)
+ISO File Writing: |                    | (02/100)
+ISO File Writing: |                    | (03/100)
+ISO File Writing: |                    | (04/100)
+ISO File Writing: |=                   | (05/100)
+ISO File Writing: |=                   | (06/100)
+ISO File Writing: |=                   | (07/100)
+ISO File Writing: |=                   | (08/100)
+ISO File Writing: |=                   | (09/100)
+ISO File Writing: |==                  | (10/100)
+ISO File Writing: |==                  | (11/100)
+ISO File Writing: |==                  | (12/100)
+ISO File Writing: |==                  | (13/100)
+ISO File Writing: |==                  | (14/100)
+ISO File Writing: |===                 | (15/100)
+ISO File Writing: |===                 | (16/100)
+ISO File Writing: |===                 | (17/100)
+ISO File Writing: |===                 | (18/100)
+ISO File Writing: |===                 | (19/100)
+ISO File Writing: |====                | (20/100)
+ISO File Writing: |====                | (21/100)
+ISO File Writing: |====                | (22/100)
+ISO File Writing: |====                | (23/100)
+ISO File Writing: |====                | (24/100)
+ISO File Writing: |=====               | (25/100)
+ISO File Writing: |=====               | (26/100)
+ISO File Writing: |=====               | (27/100)
+ISO File Writing: |=====               | (28/100)
+ISO File Writing: |=====               | (29/100)
+ISO File Writing: |======              | (30/100)
+ISO File Writing: |======              | (31/100)
+ISO File Writing: |======              | (32/100)
+ISO File Writing: |======              | (33/100)
+ISO File Writing: |======              | (34/100)
+ISO File Writing: |=======             | (35/100)
+ISO File Writing: |=======             | (36/100)
+ISO File Writing: |=======             | (37/100)
+ISO File Writing: |=======             | (38/100)
+ISO File Writing: |=======             | (39/100)
+ISO File Writing: |========            | (40/100)
+ISO File Writing: |========            | (41/100)
+ISO File Writing: |========            | (42/100)
+ISO File Writing: |========            | (43/100)
+ISO File Writing: |========            | (44/100)
+ISO File Writing: |=========           | (45/100)
+ISO File Writing: |=========           | (46/100)
+ISO File Writing: |=========           | (47/100)
+ISO File Writing: |=========           | (48/100)
+ISO File Writing: |=========           | (49/100)
+ISO File Writing: |==========          | (50/100)
+ISO File Writing: |==========          | (51/100)
+ISO File Writing: |==========          | (52/100)
+ISO File Writing: |==========          | (53/100)
+ISO File Writing: |==========          | (54/100)
+ISO File Writing: |===========         | (55/100)
+ISO File Writing: |===========         | (56/100)
+ISO File Writing: |===========         | (57/100)
+ISO File Writing: |===========         | (58/100)
+ISO File Writing: |===========         | (59/100)
+ISO File Writing: |============        | (60/100)
+ISO File Writing: |============        | (61/100)
+ISO File Writing: |============        | (62/100)
+ISO File Writing: |============        | (63/100)
+ISO File Writing: |============        | (64/100)
+ISO File Writing: |=============       | (65/100)
+ISO File Writing: |=============       | (66/100)
+ISO File Writing: |=============       | (67/100)
+ISO File Writing: |=============       | (68/100)
+ISO File Writing: |=============       | (69/100)
+ISO File Writing: |==============      | (70/100)
+ISO File Writing: |==============      | (71/100)
+ISO File Writing: |==============      | (72/100)
+ISO File Writing: |==============      | (73/100)
+ISO File Writing: |==============      | (74/100)
+ISO File Writing: |===============     | (75/100)
+ISO File Writing: |===============     | (76/100)
+ISO File Writing: |===============     | (77/100)
+ISO File Writing: |===============     | (78/100)
+ISO File Writing: |===============     | (79/100)
+ISO File Writing: |================    | (80/100)
+ISO File Writing: |================    | (81/100)
+ISO File Writing: |================    | (82/100)
+ISO File Writing: |================    | (83/100)
+ISO File Writing: |================    | (84/100)
+ISO File Writing: |=================   | (85/100)
+ISO File Writing: |=================   | (86/100)
+ISO File Writing: |=================   | (87/100)
+ISO File Writing: |=================   | (88/100)
+ISO File Writing: |=================   | (89/100)
+ISO File Writing: |==================  | (90/100)
+ISO File Writing: |==================  | (91/100)
+ISO File Writing: |==================  | (92/100)
+ISO File Writing: |==================  | (93/100)
+ISO File Writing: |==================  | (94/100)
+ISO File Writing: |=================== | (95/100)
+ISO File Writing: |=================== | (96/100)
+ISO File Writing: |=================== | (97/100)
+ISO File Writing: |=================== | (98/100)
+ISO File Writing: |=================== | (99/100)
+                                                        
+C:\Program Files (x86)\MarukoToolbox>del "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_vtemp.mp4" 
+C:\Program Files (x86)\MarukoToolbox>del "C:\Program Files (x86)\MarukoToolbox\temp\½¾°ÁµÄ¹ê¹ê_atemp.mp4" 
+C:\Program Files (x86)\MarukoToolbox>echo ===== one file is completed! ===== 
+===== one file is completed! =====
+
+

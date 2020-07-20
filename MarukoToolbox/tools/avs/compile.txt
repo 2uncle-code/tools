@@ -1,0 +1,2 @@
+avisynth.dll built with ICL 10
+http://forum.doom9.org/showthread.php?t=167358
